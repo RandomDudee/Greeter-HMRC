@@ -1,5 +1,7 @@
 package app
 
+import java.time.temporal.TemporalAmount
+
 import sun.plugin2.message.Message
 
 import scala.io.StdIn
@@ -11,8 +13,8 @@ import scala.io.StdIn
 
 class Person(name: String, age: Int) {
 
-  private val years :String = {if
-  ( age > 1 ) {
+  private val years: String = {if
+  (age > 1) {
     "years"
   } else {
     "year"
@@ -28,9 +30,11 @@ class Person(name: String, age: Int) {
   }
 }
 
+
 object Prompt {
   def ask(message: String)= StdIn.readLine(message)
 }
+
 
 object GreeterApplication extends App {
 
@@ -42,6 +46,8 @@ object GreeterApplication extends App {
   val person = new Person(name, age.toInt)
 
   println(person.speak())
+
+
 
 }
 
